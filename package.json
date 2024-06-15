@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "nitro build",
+    "build": "nitro build --preset vercel",
     "dev": "nitro dev",
     "prepare": "nitro prepare",
     "preview": "node .output/server/index.mjs"
@@ -11,6 +11,5 @@
   },
   "dependencies": {
     "sharp": "^0.33.3"
-  },
-  "preset": "vercel"
+  }
 }
