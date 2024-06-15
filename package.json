@@ -3,7 +3,7 @@
   "scripts": {
     "build": "nitro build",
     "dev": "nitro dev",
-    "preset": "cloudflare-pages",
+    "preset": "vercel",
     "prepare": "nitro prepare",
     "preview": "node .output/server/index.mjs"
   },
