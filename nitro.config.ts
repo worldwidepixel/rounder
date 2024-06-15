@@ -1,5 +1,5 @@
 //https://nitro.unjs.io/config
 export default defineNitroConfig({
   srcDir: "server",
-  preset: "none",
+  preset: "aws_amplify",
 });
