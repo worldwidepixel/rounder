@@ -7,15 +7,6 @@ export default eventHandler(async (event) => {
   const imageBuffer = await image.arrayBuffer();
   const radius = query.r;
 
-  async function toBase64ImageUrl(imgUrl: string): Promise<string> {
-    const fetchImageUrl = await fetch(imgUrl);
-    const responseArrBuffer = await fetchImageUrl.arrayBuffer();
-    const toBase64 = `data:${
-      fetchImageUrl.headers.get("Content-Type") || "image/png"
-    };base64,${Buffer.from(responseArrBuffer).toString("base64")}`;
-    return toBase64;
-  }
-
   setHeader(event, "Content-Type", "image/png");
   let baseImage = sharp(imageBuffer).png().blur(10);
   const baseMetadata = await baseImage.metadata();
