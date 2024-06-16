@@ -16,7 +16,16 @@ export default eventHandler(async (event) => {
     "https://badger.worldwidepixel.ca",
     "http://badger.worldwidepixel.ca",
   ];
-  if (allowedImageHosts.includes(imageUrl.toString())) {
+  function isAllowedHost() {
+    for (const host of allowedImageHosts) {
+      if (imageUrl.toString().includes(host)) {
+        return true;
+      }
+    }
+    return false;
+  }
+  console.log(imageUrl.toString());
+  if (isAllowedHost()) {
     if (imageUrl === null) {
       throw createError({
         statusCode: 500,
