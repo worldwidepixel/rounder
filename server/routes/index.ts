@@ -9,6 +9,9 @@ export default eventHandler(async (event) => {
     "https://modrinth.com",
     "https://worldwidepixel.ca",
     "https://wsrv.nl",
+    "http://wsrv.nl",
+    "http://cloudflare.com",
+    "https://cloudflare.com",
     "http://localhost:3000",
   ];
   if (allowedRequesters.includes(headers.origin)) {
