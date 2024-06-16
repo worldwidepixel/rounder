@@ -24,7 +24,7 @@ export default eventHandler(async (event) => {
     }
     return false;
   }
-  console.log(imageUrl.toString());
+  //console.log(imageUrl.toString());
   if (isAllowedHost()) {
     if (imageUrl === null) {
       throw createError({
