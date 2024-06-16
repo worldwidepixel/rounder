@@ -19,7 +19,7 @@ export default defineCachedEventHandler(
     const baseMetadata = await baseImage.metadata();
 
     const negative = Buffer.from(
-      `<svg><rect x="0" y="0" width="${baseMetadata.width}" height="${baseMetadata.height}" rx="${radius}" ry="50"/></svg>`
+      `<svg><rect x="0" y="0" width="${baseMetadata.width}" height="${baseMetadata.height}" rx="${radius}" ry="${radius}"/></svg>`
     );
 
     const roundedImage = sharp(imageBuffer)
