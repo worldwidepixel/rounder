@@ -3,22 +3,20 @@ import sharp from "sharp";
 export default eventHandler(async (event) => {
   const query = getQuery(event);
   const imageUrl = query.url;
-  const headers = getRequestURL(event);
-  console.log(headers);
-  const allowedRequesters = [
+
+  const allowedImageHosts = [
     "https://modrinth.com",
+    "http://modrinth.com",
+    "https://cdn.modrinth.com",
+    "http://cdn.modrinth.com",
     "https://worldwidepixel.ca",
-    "https://wsrv.nl",
-    "http://wsrv.nl",
-    "https://weserv.nl",
-    "http://weserv.nl",
-    "http://cloudflare.com",
-    "https://cloudflare.com",
-    "http://localhost:3000",
-    "https://rounder.worldwidepixel.ca",
-    "http://rounder.worldwidepixel.ca",
+    "http://worldwidepixel.ca",
+    "https://raw.theclashfruit.me",
+    "http://raw.theclashfruit.me",
+    "https://badger.worldwidepixel.ca",
+    "http://badger.worldwidepixel.ca",
   ];
-  if (allowedRequesters.includes(headers.origin)) {
+  if (allowedImageHosts.includes(imageUrl.toString())) {
     if (imageUrl === null) {
       throw createError({
         statusCode: 500,
@@ -43,7 +41,7 @@ export default eventHandler(async (event) => {
 
     return roundedImage;
   } else {
-    setResponseStatus(event, 403, "Forbidden");
-    return "You do not have access to this resource.";
+    setResponseStatus(event, 406, "Not Acceptable");
+    return "The image URL provided is not allowed.";
   }
 });
