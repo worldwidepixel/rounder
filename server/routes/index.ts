@@ -10,6 +10,8 @@ export default eventHandler(async (event) => {
     "https://worldwidepixel.ca",
     "https://wsrv.nl",
     "http://wsrv.nl",
+    "https://weserv.nl",
+    "http://weserv.nl",
     "http://cloudflare.com",
     "https://cloudflare.com",
     "http://localhost:3000",
