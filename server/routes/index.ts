@@ -8,6 +8,7 @@ export default eventHandler(async (event) => {
   const allowedRequesters = [
     "https://modrinth.com",
     "https://worldwidepixel.ca",
+    "https://wsrv.nl",
     "http://localhost:3000",
   ];
   if (allowedRequesters.includes(headers.origin)) {
