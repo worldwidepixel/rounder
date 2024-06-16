@@ -4,6 +4,12 @@ export default defineCachedEventHandler(
   async (event) => {
     const query = getQuery(event);
     const imageUrl = query.url;
+    if (imageUrl === null) {
+      throw createError({
+        statusCode: 500,
+        statusMessage: "Image not provided",
+      });
+    }
     const image = await fetch(imageUrl.toString());
     const imageBuffer = await image.arrayBuffer();
     const radius = query.r;
