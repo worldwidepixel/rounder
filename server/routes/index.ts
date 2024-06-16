@@ -15,6 +15,8 @@ export default eventHandler(async (event) => {
     "http://cloudflare.com",
     "https://cloudflare.com",
     "http://localhost:3000",
+    "https://rounder.worldwidepixel.ca",
+    "http://rounder.worldwidepixel.ca",
   ];
   if (allowedRequesters.includes(headers.origin)) {
     if (imageUrl === null) {
